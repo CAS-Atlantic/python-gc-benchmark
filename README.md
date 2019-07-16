@@ -8,6 +8,14 @@ The suite supports Python 2, Python 3, Pypy 2 and Pypy 3.
 
 The benchmarks feature programs with large demands for memory and are mostly array intensive programs like scientific computing problems, some games and other general programs that are container intensive.
 
+The memory Information analysed by the suite include:
+
++ RSS
++ VMS
++ Shared Memory
++ USS and
++ PSS
+
 The main metric considered is the Resident Set Size(RSS) which is the allocated memory for a program. This is chosen because;
 
 + It is machine-independent. Though programs will use more memory on 64-bit machines than 32-bit machines.
@@ -26,24 +34,32 @@ Therefore this metric is unsuitable for Multiprocessing and multi-threaded progr
 
 ## Run the benchmarks from source
 
+Get the source code:
+
     git clone http://gitlab.casa.cs.unb.ca/jnanjeky/python_gc_benchmark
     cd python-gc-benchmark
     python setup.py install
 
-    python-gc-benchmark  -o <filename> <benchmark>
+Run a specific benchmark:
 
-    # or:
+    python-gc-benchmark run -p <python version> -b <benchmark>
 
-    python-gc-benchmark  -o <filename> all
+Run all benchmarks:
 
+    python-gc-benchmark run -p <python version>
 ## Download from PyPI
 
+Use pip to install the package:
+
     pip install python-gc-benchmark
-    python-gc-benchmark -o <filename> <benchmark>
 
-    # or:
+Run a specific benchmark:
 
-    python-gc-benchmark -o <filename> all
+    python-gc-benchmark run -p <python version> -b <benchmark>
+
+Run all benchmarks:
+
+    python-gc-benchmark run -p <python version>
 
 ## References
 
