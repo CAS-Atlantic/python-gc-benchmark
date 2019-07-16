@@ -44,7 +44,7 @@ def main():
             'entry_points': {
                 'console_scripts': ['python_gc_benchmark=python_gc_benchmark.cli:main',]
             },
-            'install_requires': ["psutil", "six", required],
+            'install_requires': [required],
     }
 
     setup(**options)

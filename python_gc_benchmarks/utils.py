@@ -3,7 +3,7 @@ import sys, os, re, time, six
 import psutil
 from subprocess import PIPE
 
-list_of_benchmarks = [
+gen_bms = [
     'benchmarks/2to3.py',
     'benchmarks/call_method.py',
     'benchmarks/call_method_slots.py',
@@ -27,9 +27,6 @@ list_of_benchmarks = [
     'benchmarks/nbody.py',
     'benchmarks/_numpy.py',
     'benchmarks/nqueens.py',
-    'benchmarks/pickle_dict.py',
-    'benchmarks/pickle_list.py',
-    'benchmarks/pickle.py',
     'benchmarks/pidigits.py',
     'benchmarks/pyflate.py',
     'benchmarks/pystone.py',
@@ -45,25 +42,35 @@ list_of_benchmarks = [
     'benchmarks/scimark_sor.py',
     'benchmarks/scimark_sparse_mat_mult.py',
     'benchmarks/spectra_norm.py',
-    'benchmarks/sqlalchemy_declarative.py',
-    'benchmarks/sqlalchemy_imperative.py',
     'benchmarks/sqlite_synth.py',
+]
+
+#only support python3
+py3_bms =[
     'benchmarks/sympy_expand.py',
     'benchmarks/sympy_integrate.py',
     'benchmarks/sympy_str.py',
     'benchmarks/sympy_sum.py',
     'benchmarks/unpack_sequence.py',
+    'benchmarks/sqlalchemy_declarative.py',
+    'benchmarks/sqlalchemy_imperative.py',
+    'benchmarks/pickle_dict.py',
+    'benchmarks/pickle_list.py',
+    'benchmarks/_pickle.py',
 ]
 
-def cmd_run(options):
+#only support python 2 -- this though todo work on a work around.
+py2_bms =[
+    'benchmarks/_pathlib.py',
+]
 
-	print("Python GC benchmark Version %s", "0.0.1")
-
-	if options.benchmark != None:
-		run_benchmark(options, options.benchmark)
-	else:
-		for bm in list_of_benchmarks:
-			run_benchmark(options, bm)
+def collect_benchmarks(python_version):
+    if python_version == "python3" or "pypy3":
+        bms = gen_bms + py3_bms
+    else:
+        bms = gen_bms + py2_bms
+    
+    return bms
 
 def run_benchmark(options, benchmark):
 
@@ -80,3 +87,14 @@ def run_benchmark(options, benchmark):
     print ('\tData: %10d kb' % memory_info.data)
     print ('\tUSS: %10d kb' % memory_info.uss)
     print ('\tPSS: %10d kb' % memory_info.pss)
+
+def cmd_run(options):
+
+	print("Python GC benchmark Version %s", python_gc_benchmark.__version__)
+
+	if options.benchmark != None:
+		run_benchmark(options, options.benchmark)
+	elif options.benchmark == None:
+        list_of_benchmarks = collect_benchmarks(options.python)
+		for bm in list_of_benchmarks:
+			run_benchmark(options, bm)
