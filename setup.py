@@ -2,7 +2,7 @@ import python_gc_benchmark
 
 VERSION = python_gc_benchmark.__version__
 
-DESCRIPTION = 'Python GC benchmark suite'
+DESCRIPTION = 'Python GC benchmark Suite'
 CLASSIFIERS = [
     'Intended Audience :: Developers',
 ]
@@ -42,7 +42,7 @@ def main():
             'packages': packages,
             'package_data': data,
             'entry_points': {
-                'console_scripts': ['python_gc_benchmark=python_gc_benchmark.cli:main',]
+                'console_scripts': ['python-gc-benchmark=python_gc_benchmark.cli:main',]
             },
             'install_requires': [required],
     }

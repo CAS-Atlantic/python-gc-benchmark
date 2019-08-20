@@ -45,4 +45,3 @@ spambayes==1.1b2; python_version < '3.0'
 sympy==1.4                                
 tornado==5.1.1                            
 torch>=1.0
-numpy

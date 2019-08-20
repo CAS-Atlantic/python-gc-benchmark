@@ -1,6 +1,6 @@
 # python-gc-benchmark
 
-This is a Python Benchmark suite that focuses on Memory Usage. The scenarios have been chosen for memory intensive programs Intended for anyone that wants to analyse memory Usage of different Python versions. 
+This is a Python Benchmark suite that focuses on Memory Usage. The scenarios have been chosen for memory intensive programs Intended for anyone that wants to analyse memory Usage of different Python versions.
 
 The suite supports Python 2, Python 3, Pypy 2 and Pypy 3.
 
