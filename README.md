@@ -64,6 +64,6 @@ Run all benchmarks:
 
 ## References
 
-https://github.com/nuprl/retic_performance
-https://github.com/python/pyperformance
+https://github.com/nuprl/retic_performance\
+https://github.com/python/pyperformance\
 http://www.marinamele.com/7-tips-to-time-python-scripts-and-control-memory-and-cpu-usage
