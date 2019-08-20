@@ -64,6 +64,11 @@ Run all benchmarks:
 
 ## References
 
-https://github.com/nuprl/retic_performance\
-https://github.com/python/pyperformance\
+https://github.com/nuprl/retic_performance
+
+https://github.com/python/pyperformance
+
 http://www.marinamele.com/7-tips-to-time-python-scripts-and-control-memory-and-cpu-usage
+
+The Benchmark Suite is available under the terms of the Eclipse Public License 2
+which accompanies this distribution.
