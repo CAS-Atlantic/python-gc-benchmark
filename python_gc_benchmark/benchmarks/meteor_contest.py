@@ -9,12 +9,6 @@
 """
 
 """
-Meteor Puzzle board:
-http://benchmarksgame.alioth.debian.org/u32/meteor-description.html#meteor
-
-The Computer Language Benchmarks Game
-http://benchmarksgame.alioth.debian.org/
-
 Credit to Daniel Nanz, 2008-08-21
 """
 

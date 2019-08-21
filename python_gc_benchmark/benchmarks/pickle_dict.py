@@ -11,7 +11,7 @@
 """
 Benchmark pickle dict
 
-Credit to __author__ = "collinwinter@google.com (Collin Winter)"
+Credit "collinwinter@google.com (Collin Winter)"
 """
 
 from __future__ import division

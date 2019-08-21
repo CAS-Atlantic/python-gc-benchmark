@@ -1,29 +1,10 @@
 #!/usr/bin/env python
 """
- * Copyright (c) 2014, 2019 IBM Corp. and others
- *
- * This program and the accompanying materials are made available under
- * the terms of the Eclipse Public License 2.0 which accompanies this
- * distribution and is available at https://www.eclipse.org/legal/epl-2.0/
- * or the Apache License, Version 2.0 which accompanies this distribution and
- * is available at https://www.apache.org/licenses/LICENSE-2.0.
-"""
-
-"""
 Copyright 2006--2007-01-21 Paul Sladen
 http://www.paul.sladen.org/projects/compression/
 
 You may use and distribute this code under any DFSG-compatible
 license (eg. BSD, GNU GPLv2).
-
-Stand-alone pure-Python DEFLATE (gzip) and bzip2 decoder/decompressor.
-This is probably most useful for research purposes/index building;  there
-is certainly some room for improvement in the Huffman bit-matcher.
-
-With the as-written implementation, there was a known bug in BWT
-decoding to do with repeated strings.  This has been worked around;
-see 'bwt_reverse()'.  Correct output is produced in all test cases
-but ideally the problem would be found...
 """
 
 import hashlib

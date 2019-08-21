@@ -9,9 +9,6 @@
 """
 
 """
-deltablue.py
-============
-
 Ported for the PyPy project.
 Credit to Daniel Lindsley
 """

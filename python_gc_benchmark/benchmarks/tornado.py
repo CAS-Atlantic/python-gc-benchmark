@@ -9,13 +9,6 @@
  * is available at https://www.apache.org/licenses/LICENSE-2.0.
 """
 
-"""Test the performance of simple HTTP serving and client using the Tornado
-framework.
-
-A trivial "application" is generated which generates a number of chunks of
-data as a HTTP response's body.
-"""
-
 import socket
 
 from six.moves import xrange

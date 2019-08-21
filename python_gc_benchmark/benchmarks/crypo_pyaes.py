@@ -1,12 +1,3 @@
-#!/usr/bin/env python
-"""
-Pure-Python Implementation of the AES block-cipher.
-
-Benchmark AES in CTR mode using the pyaes module.
-"""
-
-from six.moves import xrange
-
 """
  * Copyright (c) 2014, 2019 IBM Corp. and others
  *
@@ -16,6 +7,15 @@ from six.moves import xrange
  * or the Apache License, Version 2.0 which accompanies this distribution and
  * is available at https://www.apache.org/licenses/LICENSE-2.0.
 """
+
+#!/usr/bin/env python
+"""
+Pure-Python Implementation of the AES block-cipher.
+
+Benchmark AES in CTR mode using the pyaes module.
+"""
+
+from six.moves import xrange
 
 import pyaes
 

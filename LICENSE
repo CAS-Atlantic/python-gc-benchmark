@@ -21,6 +21,10 @@ Subject to the following notices:
 2.	Pugixml is provided under the pugixml license below.
 3.	config.sub and config.guess are provided under the GPL v3.0 with the
 	Autoconf exception (see below).
+4.  pyflate.py is provided under any DFSG-compatible license i.e BSD or GPL-2.0.
+5.  raytrace.py is provided under the MIT license available at http://www.opensource.org/licenses/mit-license.php.
+6.  regex_v8.py is provided under the V8 contributors license available at https://github.com/v8/v8/blob/master/LICENSE.
+7.  Any Pyperformance benchmark references are provided under the MIT license. 
 
 You may distribute this program and materials under either the
 Eclipse Public License 2 or the Apache V2.0 License as long as you pass through

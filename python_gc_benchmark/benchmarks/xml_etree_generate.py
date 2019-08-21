@@ -9,15 +9,6 @@
  * is available at https://www.apache.org/licenses/LICENSE-2.0.
 """
 
-"""Benchmark script for testing the performance of ElementTree.
-
-This is intended to support Unladen Swallow's pyperf.py.
-
-This will have ElementTree, cElementTree and lxml (if available)
-parse a generated XML file, search it, create new XML trees from
-it and serialise the result.
-"""
-
 import io
 import os
 import sys
