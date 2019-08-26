@@ -1,20 +1,16 @@
 
 """
- * Copyright (c) 2014, 2019 IBM Corp. and others
- *
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which accompanies this
  * distribution and is available at https://www.eclipse.org/legal/epl-2.0/
  * or the Apache License, Version 2.0 which accompanies this distribution and
  * is available at https://www.apache.org/licenses/LICENSE-2.0.
-"""
 
-"""Benchmarks for Python's regex engine.
+Benchmarks for Python's regex engine.
 
 These are some of the original benchmarks used to tune Python's regex engine
-in 2000 written by Fredrik Lundh. Retreived from
-http://mail.python.org/pipermail/python-dev/2000-August/007797.html and
-integrated into Unladen Swallow's pyperf.py in 2009 by David Laing.
+in 2000 written by Fredrik Lundh. Retrieved from
+http://mail.python.org/pipermail/python-dev/2000-August/007797.html
 
 These benchmarks are of interest since they helped to guide the original
 optimization of the sre engine, and we shouldn't necessarily ignore them just

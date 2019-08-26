@@ -1,14 +1,11 @@
 """
- * Copyright (c) 2014, 2019 IBM Corp. and others
- *
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which accompanies this
  * distribution and is available at https://www.eclipse.org/legal/epl-2.0/
  * or the Apache License, Version 2.0 which accompanies this distribution and
  * is available at https://www.apache.org/licenses/LICENSE-2.0.
-"""
 
-"""Benchmark how quickly Python's regex implementation can compile regexes.
+Benchmark how quickly Python's regex implementation can compile regexes.
 
 We bring in all the regexes used by the other regex benchmarks, capture them by
 stubbing out the re module, then compile those regexes repeatedly. We muck with
@@ -40,7 +37,7 @@ def capture_regexes():
     def capture_sub(regex, *args):
         regexes.append((regex, 0))
         return real_sub(regex, *args)
-        
+
     return regexes
 
 

@@ -13,6 +13,8 @@ import sys, os, re, time, six
 import psutil
 from subprocess import PIPE
 
+from guppy import hpy
+
 gen_bms = [
     'benchmarks/2to3.py',
     'benchmarks/call_method.py',
@@ -78,10 +80,14 @@ def collect_benchmarks(python_version):
         bms = gen_bms + py3_bms
     else:
         bms = gen_bms + py2_bms
-    
+
     return bms
 
 def run_benchmark(options, benchmark):
+
+    h = hpy()
+    # Start heap analysis from this point
+    h.setrelheap()
 
     command = "%s" % options.python, "%s" % benchmark
 
@@ -97,13 +103,17 @@ def run_benchmark(options, benchmark):
     print ('\tUSS: %10d kb' % memory_info.uss)
     print ('\tPSS: %10d kb' % memory_info.pss)
 
+    if (options.heapu):
+        print (h.heap())
+
+    if (options.heapu):
+        print (h.heapu())
+
+
 def cmd_run(options):
-
-	print("Python GC benchmark Version %s", python_gc_benchmark.__version__)
-
-	if options.benchmark != None:
-		run_benchmark(options, options.benchmark)
-	elif options.benchmark == None:
+    if (options.benchmark):
+        run_benchmark(options, options.benchmark)
+    else:
         list_of_benchmarks = collect_benchmarks(options.python)
-		for bm in list_of_benchmarks:
-			run_benchmark(options, bm)
+        for bm in list_of_benchmarks:
+            run_benchmark(options, bm)

@@ -1,54 +1,19 @@
 """
- * Copyright (c) 2014, 2019 IBM Corp. and others
- *
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which accompanies this
  * distribution and is available at https://www.eclipse.org/legal/epl-2.0/
  * or the Apache License, Version 2.0 which accompanies this distribution and
  * is available at https://www.apache.org/licenses/LICENSE-2.0.
-"""
 
-"""
-"PYSTONE" Benchmark Program
+Adapted from the official "PYSTONE" Benchmark Program
 
 Version:        Python/1.1 (corresponds to C/1.1 plus 2 Pystone fixes)
 
 Author:         Reinhold P. Weicker,  CACM Vol 27, No 10, 10/84 pg. 1013.
 
-                Translated from ADA to C by Rick Richardson.
-                Every method to preserve ADA-likeness has been used,
-                at the expense of C-ness.
-
-                Translated from C to Python by Guido van Rossum.
-
-Version History:
-
-                Version 1.1 corrects two bugs in version 1.0:
-
-                First, it leaked memory: in Proc1(), NextPSRecord ends
-                up having a pointer to itself.  I have corrected this
-                by zapping NextPSRecord.PtrComp at the end of Proc1().
-
-                Second, Proc3() used the operator != to compare a
-                record to None.  This is rather inefficient and not
-                true to the intention of the original benchmark (where
-                a pointer comparison to None is intended; the !=
-                operator attempts to find a method __cmp__ to do value
-                comparison of the record).  Version 1.1 runs 5-10
-                percent faster than version 1.0, so benchmark figures
-                of different versions can't be compared directly.
-
-bg:
-- add types to:
-  - `PSRecord.__init__`
-- remove optional args from `PSRecord.__init__`, do initialization in `PSRecord.copy`
-- remove clock, timing calculations, use `Timer` instead
-- inlined `main`, `pystones`, `Proc0` functions (each called once)
 """
 
 LOOPS = 50000
-
-__version__ = "1.1"
 
 Ident1 = 1
 Ident2 = 2

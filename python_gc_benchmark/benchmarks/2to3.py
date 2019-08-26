@@ -1,6 +1,4 @@
 """
- * Copyright (c) 2014, 2019 IBM Corp. and others
- *
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which accompanies this
  * distribution and is available at https://www.eclipse.org/legal/epl-2.0/
@@ -25,7 +23,6 @@ def _2to3(command, devnull_out):
 
 
 if __name__ == "__main__":
-
     datadir = os.path.join(os.path.dirname(__file__), 'data', '2to3')
     pyfiles = glob.glob(os.path.join(datadir, '*.py.txt'))
 

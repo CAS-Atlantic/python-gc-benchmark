@@ -1,14 +1,10 @@
 """
- * Copyright (c) 2014, 2019 IBM Corp. and others
- *
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which accompanies this
  * distribution and is available at https://www.eclipse.org/legal/epl-2.0/
  * or the Apache License, Version 2.0 which accompanies this distribution and
  * is available at https://www.apache.org/licenses/LICENSE-2.0.
-"""
 
-"""
 Benchmark pickle dict
 
 Credit "collinwinter@google.com (Collin Winter)"
@@ -102,7 +98,7 @@ def is_module_accelerated(module):
     return getattr(pickle.Pickler, '__module__', '<jython>') == 'pickle'
 
 if __name__ == "__main__":
-    
+
     if six.PY2:
         import cPickle as pickle
     elif six.PY3:
@@ -112,5 +108,5 @@ if __name__ == "__main__":
         import pickle
         if is_module_accelerated(pickle):
             raise RuntimeError("Missing C accelerators for pickle")
-    
+
     run_pickle_dict(20, pickle, None)

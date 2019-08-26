@@ -1,14 +1,10 @@
 """
- * Copyright (c) 2014, 2019 IBM Corp. and others
- *
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which accompanies this
  * distribution and is available at https://www.eclipse.org/legal/epl-2.0/
  * or the Apache License, Version 2.0 which accompanies this distribution and
  * is available at https://www.apache.org/licenses/LICENSE-2.0.
-"""
 
-"""
 MathWorld: "Hundred-Dollar, Hundred-Digit Challenge Problems", Challenge #3.
 http://mathworld.wolfram.com/Hundred-DollarHundred-DigitChallengeProblems.html
 
@@ -20,6 +16,8 @@ Fixed by Isaac Gouy
 Sped up by Josh Goldfoot
 Dirtily sped up by Simon Descarpentries
 Concurrency by Jason Stitt
+
+Final modification by Joannah Nanjekye
 """
 
 from six.moves import xrange, zip as izip

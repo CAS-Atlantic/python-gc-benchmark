@@ -8,14 +8,6 @@
 # is available at https://www.apache.org/licenses/LICENSE-2.0.
 ###############################################################################
 
-# Installer requirements
-# ----------------------
-
-setuptools>=18.5
-pip>=6.0
-wheel
-
-
 # Indirect dependencies
 # ---------------------
 
@@ -31,7 +23,7 @@ statistics==1.0.3.5; python_version < '3.4'
 docutils==0.14
 
 
-# Test suite dependencies
+# Benchmark suite dependencies
 # --------------------------
 
 six==1.12.0
@@ -41,17 +33,19 @@ psutil
 # Benchmark dependencies
 # -----------------------
 
-Chameleon==3.6.1                         
-Django==1.11.20                           
-Genshi==0.7.3                             
-Mako==1.0.10                              
-SQLAlchemy==1.3.4                         
-dulwich==0.19.11                          
-mercurial==5.0; python_version < '3.0'    
-html5lib==1.0.1                           
-pathlib2==2.3.3; python_version < '3.4'  
-pyaes==1.6.1                              
-spambayes==1.1b2; python_version < '3.0'  
-sympy==1.4                                
-tornado==5.1.1                            
+Chameleon==3.6.1
+Django==1.11.20
+Genshi==0.7.3
+Mako==1.0.10
+SQLAlchemy==1.3.4
+dulwich==0.19.11
+mercurial==5.0; python_version < '3.0'
+html5lib==1.0.1
+pathlib2==2.3.3; python_version < '3.4'
+pyaes==1.6.1
+spambayes==1.1b2; python_version < '3.0'
+sympy==1.4
+tornado==5.1.1
 torch>=1.0
+guppy; python_version < '3.0'
+guppy3; python_version > '3.0'

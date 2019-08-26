@@ -1,16 +1,5 @@
 """
- * Copyright (c) 2014, 2019 IBM Corp. and others
- *
- * This program and the accompanying materials are made available under
- * the terms of the Eclipse Public License 2.0 which accompanies this
- * distribution and is available at https://www.eclipse.org/legal/epl-2.0/
- * or the Apache License, Version 2.0 which accompanies this distribution and
- * is available at https://www.apache.org/licenses/LICENSE-2.0.
-"""
-
-"""create chaosgame-like fractals
-
-Copyright (C) 2005 Carl Friedrich Bolz
+Modified from Pyperformance .
 """
 
 from __future__ import division, print_function
@@ -280,7 +269,7 @@ def main():
 
     c = Chaosgame(splines, DEFAULT_THICKNESS)
     c.create_image_chaos(DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_ITERATIONS, "chaos", DEFAULT_RNG_SEED)
-    
+
 
 if __name__ == "__main__":
     c = main()

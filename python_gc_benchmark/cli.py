@@ -18,8 +18,8 @@ from shutil import which
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description=("Runs memory usage benchmarks for different"
-            "memory intensive programs."))
+        description=("Runs memory usage benchmarks for different\
+        memory intensive programs."))
 
     subparsers = parser.add_subparsers(dest='action')
     cmds = []
@@ -33,11 +33,18 @@ def parse_args():
 
     for cmd in cmds:
         cmd.add_argument("-p", "--python",
-                         help="Python executable (default: use running Python)",
-                         default=sys.executable)
+                         help="Python executable (default: use running Python)\
+                         ", default=sys.executable)
         cmd.add_argument("-b", "--benchmark",
-                         help="Python executable (default: use running Python)",
-                         default=None)
+                         help="Python executable (default: use running Python\
+                         )", default=None)
+        cmd.add_argument("-hp", "--heap",
+                         help="Traverse the heap from a root to find all\
+                         reachable and visible objects", action='store_true')
+        cmd.add_argument("-hu", "--heapu",
+                         help="Display objects in the heap that remain after\
+                         garbage collection but are not reachable from the\
+                         root", action='store_true')
 
     options = parser.parse_args()
 

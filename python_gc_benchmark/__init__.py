@@ -7,6 +7,6 @@
  * or the Apache License, Version 2.0 which accompanies this distribution and
  * is available at https://www.apache.org/licenses/LICENSE-2.0.
  """
- 
- VERSION = (0, 1, 2)
+
+VERSION = (0, 1, 2)
 __version__ = '.'.join(map(str, VERSION))
