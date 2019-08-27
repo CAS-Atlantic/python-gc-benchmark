@@ -12,8 +12,94 @@ import sys, os, re, time, six
 import argparse
 import psutil
 from subprocess import PIPE
-from utils import cmd_run
 from shutil import which
+
+import glob
+import errno
+
+from guppy import hpy
+
+
+def collect_benchmarks():
+    path = 'benchmarks/*.py'
+    files = glob.glob(path)
+
+    return files
+
+
+def run_benchmark(options, benchmark):
+
+    h = hpy()
+    # Start heap analysis from this point
+    h.setrelheap()
+
+    command = "%s" % options.python, "%s" % benchmark
+
+    p = psutil.Popen(command, stdout=PIPE)
+
+    memory_info = p.memory_full_info()
+
+    print('Memory Benchmark for : %s' % benchmark)
+    print('\tRSS: %10d kb' % memory_info.rss)
+    print('\tVMS: %10d kb' % memory_info.vms)
+    print('\tShared: %10d kb' % memory_info.shared)
+    print('\tData: %10d kb' % memory_info.data)
+    print('\tUSS: %10d kb' % memory_info.uss)
+    print('\tPSS: %10d kb' % memory_info.pss)
+
+    if options.heapu:
+        print(h.heap())
+
+    if options.heapu:
+        print(h.heapu())
+
+def run_heap(options, benchmark):
+
+    h = hpy()
+    # Start heap analysis from this point
+    h.setrelheap()
+
+    command = "%s" % options.python, "%s" % benchmark
+
+    p = psutil.Popen(command, stdout=PIPE)
+
+    print (h.heap())
+
+def run_heapu(options, benchmark):
+
+    h = hpy()
+    # Start heap analysis from this point
+    h.setrelheap()
+
+    command = "%s" % options.python, "%s" % benchmark
+
+    p = psutil.Popen(command, stdout=PIPE)
+
+    print (h.heapu())
+
+def cmd_run(options):
+    if (options.benchmark):
+        run_benchmark(options, options.benchmark)
+    else:
+        list_of_benchmarks = collect_benchmarks()
+        for bm in list_of_benchmarks:
+            run_benchmark(options, bm)
+
+def cmd_heap(options):
+    if (options.benchmark):
+        run_heap(options, options.benchmark)
+    else:
+        list_of_benchmarks = collect_benchmarks()
+        for bm in list_of_benchmarks:
+            run_heap(options, bm)
+
+def cmd_heapu(options):
+    if (options.benchmark):
+        run_heapu(options, options.benchmark)
+    else:
+        list_of_benchmarks = collect_benchmarks()
+        for bm in list_of_benchmarks:
+            run_heapu(options, bm)
 
 
 def parse_args():
@@ -30,6 +116,26 @@ def parse_args():
     cmds.append(cmd)
     cmd.add_argument("-o", "--output", metavar="FILENAME",
                      help="output file for benchmark results.")
+    cmd.add_argument("-hp", "--heap",
+                         help="Traverse the heap from a root to find all\
+                         reachable and visible objects", action='store_true')
+    cmd.add_argument("-hu", "--heapu",
+                         help="Display objects in the heap that remain after\
+                         garbage collection but are not reachable from the\
+                         root", action='store_true')
+
+     # heap
+    cmd = subparsers.add_parser(
+        'heap', help="Traverse the heap from a root to find all\
+        reachable and visible objects")
+    cmds.append(cmd)
+
+    # heapu
+    cmd = subparsers.add_parser(
+        'heapu', help="Display objects in the heap that remain after\
+        garbage collection but are not reachable from the\
+        root")
+    cmds.append(cmd)
 
     for cmd in cmds:
         cmd.add_argument("-p", "--python",
@@ -38,13 +144,6 @@ def parse_args():
         cmd.add_argument("-b", "--benchmark",
                          help="Python executable (default: use running Python\
                          )", default=None)
-        cmd.add_argument("-hp", "--heap",
-                         help="Traverse the heap from a root to find all\
-                         reachable and visible objects", action='store_true')
-        cmd.add_argument("-hu", "--heapu",
-                         help="Display objects in the heap that remain after\
-                         garbage collection but are not reachable from the\
-                         root", action='store_true')
 
     options = parser.parse_args()
 
@@ -72,6 +171,14 @@ def _main():
 
     if options.action == 'run':
         cmd_run(options)
+        sys.exit(1)
+
+    if options.action == 'heap':
+        cmd_heap(options)
+        sys.exit(1)
+
+    if options.action == 'heapu':
+        cmd_heapu(options)
         sys.exit(1)
 
 def main():
