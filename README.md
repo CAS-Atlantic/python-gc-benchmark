@@ -16,6 +16,7 @@ of different Python versions.
 
 The suite supports Python 2, Python 3, Pypy 2 and Pypy 3.
 
+
 ## Implementation Criteria
 
 The benchmarks feature programs with large demands for memory and are mostly array intensive programs like scientific
@@ -152,6 +153,26 @@ Finally, Heap Analysis After Garbage Collection :
         8     53   7     3816   2    168144  98 types.MemberDescriptorType
         9     14   2     2166   1    170310  99 str
     <6 more rows. Type e.g. '_.more' to view.>
+
+Note, examples are running on this specification :
+
+    gitpod /workspace/python-gc-benchmark $ lsb_release -a
+    No LSB modules are available.
+    Distributor ID: Ubuntu
+    Description:    Ubuntu 19.04
+    Release:        19.04
+    Codename:       disco
+    gitpod /workspace/python-gc-benchmark $ python2
+    Python 2.7.15 (default, Aug 20 2019, 10:48:33)
+    [GCC 8.3.0] on linux2
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> exit()
+    gitpod /workspace/python-gc-benchmark $ python3
+    Python 3.7.2 (default, Aug 20 2019, 10:51:20)
+    [GCC 8.3.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> exit()
+    gitpod /workspace/python-gc-benchmark $
 
 ## Future work
 
