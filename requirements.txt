@@ -34,7 +34,7 @@ psutil
 # -----------------------
 
 Chameleon==3.6.1
-Django==1.11.23
+Django==1.11.28
 Genshi==0.7.3
 Mako==1.0.10
 SQLAlchemy==1.3.4
