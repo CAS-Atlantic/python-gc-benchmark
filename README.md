@@ -14,7 +14,7 @@ This is a Python Benchmark suite that focuses on Memory Usage and Heap Analysis.
 have been chosen for memory intensive programs Intended for anyone that wants to analyse memory Usage
 of different Python versions.
 
-The suite supports Python 2, Python 3, Pypy 2 and Pypy 3.
+The suite supports Python 2, Python 3, PyPy 2 and PyPy 3.
 
 
 ## Implementation Criteria
@@ -177,7 +177,6 @@ Note, examples are running on this specification :
 ## Future work
 
 + Add other useful commands.
-+ Add more Scientific benchmarks.
 + Investigate Ubuntu s390x .
 
 ## References
