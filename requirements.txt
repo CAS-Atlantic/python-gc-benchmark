@@ -13,7 +13,7 @@
 
 backports-abc==0.5
 singledispatch==3.4.0.3
-certifi==2019.3.9
+certifi==2022.12.7
 lockfile==0.12.2; python_version < '3.0'
 pydns==2.3.6; python_version < '3.0'
 MarkupSafe==1.1.1
